@@ -1,0 +1,13 @@
+#!/bin/bash
+
+jdk_url=${1}
+
+if [ "${jdk_url}" == "" ]; then
+  echo "required jdk url. please look at this page."
+  echo "http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html"
+  exit 1
+fi
+
+wget --no-check-certificate --no-cookies \
+         --header "Cookie: oraclelicense=accept-securebackup-cookie" \
+         ${jdk_url}
